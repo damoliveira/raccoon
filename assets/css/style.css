@@ -1,0 +1,840 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 400 1.5rem "Segoe UI list", sans-serif;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font: 200 "Segoe UI", sans-serif 1.5rem;
+}
+
+.text-title {
+  margin-bottom: 50px;
+  color: #2571B7;
+}
+
+header {
+  width: auto;
+  height: 4rem;
+  background: #2571B7;
+}
+
+#header {
+  display: flex;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+
+/*======= NAVIGATION =====================*/
+nav {
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+nav ul li {
+  text-align: center;
+}
+
+nav ul li a {
+  transition: 0.3s;
+  position: relative;
+  color: #FFF;
+  text-decoration: none;
+}
+
+nav .logo {
+  display: none;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #002050;
+}
+
+nav ul li a::after {
+  content: "";
+  width: 0%;
+  height: 2px;
+  background-color: #FFF;
+  position: absolute;
+  left: 0;
+  bottom: -1.5rem;
+  transition: width 0.4s;
+}
+
+nav ul li a:hover::after,
+nav ul li a.active::after {
+  width: 100%;
+  font-weight: bold;
+}
+
+nav .menu {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+}
+
+nav .menu ul {
+  display: none;
+}
+
+/* === MOSTRAR MENU */
+nav.show .menu {
+  opacity: 1;
+  visibility: visible;
+  background: #2571B7;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-content: center;
+}
+
+nav.show ul.grid {
+  gap: 4rem;
+}
+
+nav.show .menu ul {
+  display: grid;
+}
+
+/*======= TOGGLE MENU =====================*/
+.toggle {
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+nav .icon-close {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: -1.5rem;
+  right: 1.5rem;
+  z-index: 20;
+  transition: 0.4s;
+}
+
+nav.show .icon-close {
+  visibility: visible;
+  opacity: 1;
+  top: 1.5rem;
+}
+
+.button a {
+  padding: 8px 20px;
+  text-decoration: none;
+  color: #FFF;
+}
+
+nav .button .button-header {
+  background: #002050;
+}
+
+nav .button a {
+  font-size: 15px;
+}
+
+/*======= HOME =====================*/
+#home {
+  position: relative;
+  top: 4rem;
+  width: auto;
+  height: 500px;
+  margin: 0;
+  padding: 0;
+}
+
+#home .image img {
+  width: 100vw;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  object-fit: cover;
+  left: 0;
+}
+
+#home .image::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0.5;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+}
+
+#home .text {
+  position: relative;
+  z-index: 20;
+  color: #FFF;
+  text-align: center;
+  line-height: auto;
+  font-size: 25px;
+  top: 100px;
+}
+
+#home .text .text-description p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+#home .button-home {
+  background: #00A4EF;
+  padding: 15px 30px;
+}
+
+#home .text h2,
+#home .text p {
+  margin-bottom: 40px;
+}
+
+#home .logo-home-img {
+  position: relative;
+  margin-top: 90px;
+  text-align: center;
+}
+
+#home .icon-arrow-up {
+  display: none;
+}
+
+/*====SERVICES====*/
+#services {
+  position: relative;
+  top: 140px;
+  text-align: center;
+}
+
+#services p {
+  color: #737373;
+  font-size: 20px;
+  line-height: 2;
+  font-family: "Segoe UI", sans-serif;
+  margin-bottom: 15px;
+}
+
+#services .text-services {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  color: #2571B7;
+}
+
+#services .text-description {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+#services .cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#services .flash-card {
+  display: flex;
+  width: 268px;
+  height: 110px;
+  margin-bottom: 30px;
+}
+#services .flash-card img {
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+#services .flash-card .icon-alvo {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+#services .flash-card h3 {
+  text-align: left;
+  color: #FFF;
+  font-size: 18px;
+}
+#services .flash-card p {
+  font-size: 12px;
+  color: #FFF;
+  text-align: left;
+  line-height: normal;
+}
+#services .flash-card h3, #services .flash-card p {
+  justify-content: center;
+  align-items: center;
+}
+
+#services .card-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#services .card-services1 {
+  background-color: #0072C6;
+}
+
+#services .card-services2 {
+  background-color: #2C5898;
+}
+
+#services .card-services3 {
+  background-color: #347F56;
+}
+
+#services .card-services4 {
+  background-color: #CB4A32;
+}
+
+#services .card-services5 {
+  background-color: #733781;
+}
+
+#services .card-services6 {
+  background-color: #00AFF0;
+}
+
+#services .card-services7 {
+  background-color: #094AB2;
+}
+
+#services .card-services8 {
+  background-color: #0073C6;
+}
+
+#services .card-services9 {
+  background-color: #0093BE;
+}
+
+#services .card-services10 {
+  background-color: #5558AF;
+}
+
+/*===About========= */
+#about {
+  position: relative;
+  top: 200px;
+  text-align: center;
+}
+
+#about .text-about {
+  margin-bottom: 50px;
+  color: #2571B7;
+}
+
+#about .card-about {
+  display: flex;
+  flex-direction: column;
+}
+
+#about .card-about1,
+.card-about2 {
+  border-bottom: 2px solid #DEDEDE;
+}
+
+#about .flash-card-about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#about .flash-card-about .icon-about {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50px;
+}
+#about .flash-card-about .icon-about img {
+  width: 30px;
+  height: 30px;
+}
+#about .flash-card-about .color-about1 {
+  background-color: #7FBA00;
+}
+#about .flash-card-about .color-about2 {
+  background-color: #00A4EF;
+}
+#about .flash-card-about .color-about2 .title {
+  font-size: 15px;
+}
+#about .flash-card-about .color-about3 {
+  background-color: #FFB900;
+}
+#about .flash-card-about .text-about1 {
+  color: #7FBA00;
+}
+#about .flash-card-about .text-about1 .border-about1 {
+  border: 1px solid #7FBA00;
+  font-size: 12px;
+  width: 100px;
+  margin-bottom: 20px;
+  padding: 10px 5px;
+}
+#about .flash-card-about .text-about2 {
+  color: #00A4EF;
+}
+#about .flash-card-about .text-about2 .border-about2 {
+  border: 1px solid #00A4EF;
+  font-size: 12px;
+  width: 100px;
+  margin-bottom: 20px;
+  padding: 10px 5px;
+}
+#about .flash-card-about .text-about3 {
+  color: #FFB900;
+}
+#about .flash-card-about .text-about3 .border-about3 {
+  border: 1px solid #FFB900;
+  font-size: 12px;
+  width: 100px;
+  margin-bottom: 20px;
+  padding: 10px 5px;
+}
+#about .flash-card-about p {
+  font-size: 12px;
+  color: #737373;
+  line-height: normal;
+}
+#about .flash-card-about h3 {
+  font-size: 18px;
+  margin-top: 20px;
+}
+#about .flash-card-about h3, #about .flash-card-about p {
+  text-align: left;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  margin-bottom: 20px;
+}
+
+/*===Testimonials========= */
+#testimonials {
+  position: relative;
+  top: 200px;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 100px;
+}
+#testimonials .testimonials {
+  border: 3px solid #DEDEDE;
+}
+#testimonials .testimonials h3 {
+  color: #F4724D;
+  margin: 30px 10px;
+  font-size: 20px;
+}
+#testimonials .testimonials p {
+  color: #737373;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+/*===Banner========= */
+.banner {
+  position: relative;
+  top: 50px;
+  width: auto;
+  height: 150px;
+}
+.banner .banner-img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.banner p {
+  font-size: 18px;
+  color: #FFF;
+  position: absolute;
+  top: 25px;
+  z-index: 5;
+}
+
+/*===Contact========= */
+#contact {
+  position: relative;
+  top: 200px;
+  margin-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#contact p {
+  color: #737373;
+  font-size: 18px;
+}
+#contact .area {
+  background-color: #E6E6E6;
+  margin-top: 30px;
+  padding-bottom: 40px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 10%;
+}
+#contact label {
+  font-size: 12px;
+  color: #737373;
+  text-align: left;
+  font-family: "Segoe UI", sans-serif;
+}
+#contact .button a {
+  position: relative;
+  top: 20px;
+  color: #FFF;
+  background: #00A4EF;
+  padding: 10px 50px;
+}
+#contact input {
+  text-align: center;
+}
+
+footer {
+  position: relative;
+  top: 150px;
+}
+footer .footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+footer .footer-logo1 {
+  display: flex;
+}
+footer .footer-logo1 img {
+  width: auto;
+  height: 30px;
+}
+footer .footer-logo2 {
+  display: flex;
+}
+footer .footer-logo2 img {
+  width: auto;
+  height: 30px;
+}
+footer p {
+  margin-top: 50px;
+  font-size: 12px;
+  color: #737373;
+  text-align: center;
+}
+
+@media (min-width: 750px) {
+  .container {
+    margin-left: 4rem;
+    margin-right: 2rem;
+  }
+
+  .title {
+    font-size: 4.5rem;
+  }
+
+  #header .logo {
+    display: flex;
+    width: 40px;
+    height: 20px;
+  }
+  #header nav .menu {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+    width: auto;
+    align-items: center;
+    position: relative;
+    left: 500;
+  }
+  #header nav .grid {
+    font-size: 1rem;
+  }
+  #header nav .menu ul {
+    display: flex;
+    gap: 2rem;
+  }
+  #header nav .menu ul li .title {
+    font-size: 18px;
+  }
+  #header nav .icon-menu {
+    display: none;
+  }
+
+  #home {
+    display: flex;
+    text-align: left;
+    top: 0;
+    height: 800px;
+  }
+
+  #home .text h2, #home .text p {
+    display: flex;
+    position: relative;
+    top: 200px;
+  }
+
+  #home p {
+    display: flex;
+    font-size: 18px;
+  }
+
+  #home .button {
+    display: flex;
+    position: relative;
+    top: 200px;
+  }
+
+  #home .logo-home-img {
+    width: auto;
+    height: auto;
+    display: flex;
+    margin-top: 200px;
+    margin-left: 490px;
+    top: 150px;
+  }
+
+  #home .icon-arrow-up {
+    display: flex;
+    transform: rotate(180deg);
+    transform-origin: left top 0;
+    margin-left: 20px;
+    margin-top: 200px;
+  }
+
+  #services .cards {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    column-gap: 150px;
+    align-items: left;
+    margin-right: 100px;
+  }
+  #services .flash-card {
+    width: 300px;
+    height: 100px;
+  }
+  #services .card-services7,
+#services .card-services8,
+#services .card-services9,
+#services .card-services10 {
+    display: flex;
+  }
+
+  #about .card-about {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  #about .flash-card-about {
+    display: flex;
+    flex-direction: column;
+  }
+  #about .flash-card-about .icon-about {
+    position: relative;
+    bottom: 85%;
+    left: 0%;
+    width: 80px;
+    height: 80px;
+  }
+  #about .aboutx {
+    position: relative;
+    top: 30px;
+    z-index: 1;
+  }
+  #about .text-about1 p,
+#about .text-about2 p,
+#about .text-about3 p {
+    text-align: center;
+  }
+  #about .title::after {
+    content: "";
+    position: absolute;
+    left: 40%;
+    bottom: 71%;
+    height: 1px;
+    width: 40px;
+    border-bottom: 3px solid #DEDEDE;
+    z-index: 3;
+  }
+  #about .text-about1 h3,
+#about .text-about2 h3,
+#about .text-about3 h3 {
+    text-align: center;
+  }
+  #about .btn-about {
+    position: relative;
+    left: 50px;
+  }
+  #about .icon-about {
+    position: relative;
+    bottom: 90%;
+    left: 0%;
+    width: 100px;
+    height: 100px;
+  }
+  #about .card-about1,
+#about .card-about2 {
+    border: 0;
+  }
+
+  #testimonials .testimonials-grid {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+  }
+  #testimonials .testimonials-grid .testimonials h3 {
+    font-size: 15px;
+  }
+  #testimonials .testimonials-grid .testimonials p {
+    font-size: 15px;
+    padding: 5px;
+  }
+  #testimonials .banner p {
+    font-size: 20px;
+  }
+
+  #contact .area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    position: relative;
+    left: 25%;
+  }
+
+  footer .footer {
+    display: grid;
+    grid-template-columns: 50px 50px;
+    width: 400px;
+    position: relative;
+    left: 25%;
+  }
+}
+@media (min-width: 850px) {
+  #home .logo-home-img {
+    width: auto;
+    height: auto;
+    display: flex;
+    margin-left: 590px;
+  }
+}
+@media (min-width: 950px) {
+  #home .logo-home-img {
+    width: auto;
+    height: auto;
+    display: flex;
+    margin-left: 690px;
+  }
+
+  #services .cards {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    column-gap: 250px;
+    align-items: left;
+    margin-right: 150px;
+  }
+
+  #services .flash-card {
+    width: 400px;
+    height: 100px;
+  }
+
+  #testimonials .testimonials-grid {
+    display: flex;
+    flex-direction: row;
+    height: auto;
+    width: auto;
+  }
+  #testimonials .testimonials-grid .testimonials h3 {
+    font-size: 30px;
+  }
+  #testimonials .testimonials-grid .testimonials p {
+    font-size: 20px;
+    padding: 5px;
+  }
+  #testimonials .banner p {
+    font-size: 20px;
+  }
+
+  #contact .area {
+    position: relative;
+    left: 30%;
+  }
+}
+@media (min-width: 1050px) {
+  .container {
+    margin-left: 6rem;
+    margin-right: 4rem;
+  }
+
+  #home .logo-home-img {
+    width: auto;
+    height: auto;
+    display: flex;
+    margin-left: 790px;
+  }
+}
+@media (min-width: 1150px) {
+  #home .logo-home-img {
+    width: auto;
+    height: auto;
+    display: flex;
+    margin-left: 890px;
+  }
+
+  #services .cards {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    column-gap: 350px;
+    align-items: left;
+    margin-right: 300px;
+  }
+
+  #services .flash-card {
+    width: 500px;
+    height: 100px;
+  }
+}
+@media (min-width: 1250px) {
+  #home .logo-home-img {
+    width: auto;
+    height: auto;
+    display: flex;
+    margin-left: 1490px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
